@@ -33,6 +33,8 @@ class TreatmentsRelationManager extends RelationManager
                     ->numeric()
                     ->prefix('€')
                     ->maxValue(232322322),
+
+
             ]);
     }
 
@@ -45,6 +47,9 @@ class TreatmentsRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('price')
                     ->money('EUR')
                     ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime(),
+
             ])
             ->filters([
                 //
