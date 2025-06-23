@@ -25,12 +25,16 @@ class MemberResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name'),
-                Forms\Components\TextInput::make('designation'),
-                Forms\Components\TextInput::make('fb_url')->label('Facebook Url'),
-                Forms\Components\TextInput::make('tw_url')->label('Twitter Url'),
-                Forms\Components\TextInput::make('in_url')->label('Instagram Url'),
+                Forms\Components\TextInput::make('name')->required()->placeholder('Enter Name'),
+                Forms\Components\TextInput::make('designation')->required()->placeholder('Enter Designation'),
+                Forms\Components\TextInput::make('fb_url')->label('Facebook Url')->placeholder('Facebook Url'),
+                Forms\Components\TextInput::make('tw_url')->label('Twitter Url')->placeholder('Twitter Url'),
+                Forms\Components\TextInput::make('in_url')->label('Instagram Url')->placeholder('Instagram Url'),
                 Forms\Components\FileUpload::make('image'),
+                Forms\Components\Select::make('status')->options([
+                    1 => 'Active',
+                    0 => 'Block',
+                ]),
             ]);
     }
 
@@ -38,12 +42,12 @@ class MemberResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('image')->width(100),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('designation'),
                 Tables\Columns\TextColumn::make('fb_url'),
                 Tables\Columns\TextColumn::make('tw_url'),
                 Tables\Columns\TextColumn::make('in_url'),
-                Tables\Columns\TextColumn::make('image'),
                 Tables\Columns\TextColumn::make('status'),
             ])
             ->filters([
