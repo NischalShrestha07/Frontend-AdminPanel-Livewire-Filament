@@ -81,14 +81,7 @@
                 $i=1;
                 @endphp
                 @foreach ($services as $item)
-                <div class="col-lg-4 col-md-6 service-item">
-                    <a class="text-black" href="service-details.html">
-                        <div class="block"> <span class="colored-box text-center h3 mb-4">{{$i++}}</span>
-                            <h3 class="mb-3 service-title">{{$item->title}}</h3>
-                            <p class="mb-0 service-description">{{$item->description}}</p>
-                        </div>
-                    </a>
-                </div>
+                <x-service-card :item="$item" :i="$i" />
                 @endforeach
 
             </div>

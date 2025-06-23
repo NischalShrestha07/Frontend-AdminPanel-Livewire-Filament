@@ -33,7 +33,7 @@
     <header class="navigation bg-tertiary">
         <nav class="navbar navbar-expand-xl navbar-light text-center py-3">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" wire:navigate href="{{route('home')}}">
                     <img loading="prelaod" decoding="async" class="img-fluid" width="160"
                         src="{{ asset('front/images/logo.png') }}" alt="Wallet">
                 </a>
