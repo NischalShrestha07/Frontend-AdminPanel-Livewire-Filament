@@ -4,6 +4,7 @@ namespace App\Filament\Resources\AboutPageResource\Pages;
 
 use App\Filament\Resources\AboutPageResource;
 use Filament\Actions;
+use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
 
 class EditAboutPage extends EditRecord
@@ -15,5 +16,13 @@ class EditAboutPage extends EditRecord
         return [
             Actions\DeleteAction::make(),
         ];
+    }
+    // notification changes
+    protected function getSavedNotification(): Notification
+    {
+        return Notification::make()
+            ->success()
+            ->title('About Section Updated.')
+            ->body('About section Updated successfully.');
     }
 }

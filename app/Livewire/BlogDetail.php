@@ -10,7 +10,7 @@ class BlogDetail extends Component
     public $blog;
     public function mount($id)
     {
-        $this->blog = Article::findOrFail($id);
+        $this->blog = Article::select('articles.*', 'categories.name as category_name')->leftJoin('categories', 'categories.id', 'articles.category_id')->findOrFail($id);
         // dd($this->blog);
     }
     public function render()

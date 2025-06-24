@@ -2,12 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Models\Member;
 use Livewire\Component;
 
 class AboutPage extends Component
 {
     public function render()
     {
-        return view('livewire.about-page');
+        $members = Member::orderBy('name', 'asc')->get();
+        return view('livewire.about-page', compact('members'));
     }
 }

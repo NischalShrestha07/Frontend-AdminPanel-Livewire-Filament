@@ -76,42 +76,34 @@
                     </div>
                 </div>
             </div>
+
             <div class="row position-relative">
                 @foreach ($members as $item)
                 <div class="col-xl-3 col-lg-4 col-md-6 mt-4">
-                    <divclass="card bg-transparent border-0 text-center">
-                        <div class="card-img">
 
-                            @if($item->image != '')
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-img">
+                            @if ($item->image != '')
                             <img loading="lazy" decoding="async" src="{{asset('storage/'.$item->image)}}"
                                 alt="{{$item->name}}" class="rounded w-100" width="300" height="332">
                             @endif
-
                             <ul class="card-social list-inline">
-                                @if($item->fb_url != '')
-                                <li class="list-inline-item"><a class="facebook" target="_blank"
-                                        href="{{$item->fb_url}}"><i class="fab fa-facebook"></i></a>
+                                <li class="list-inline-item"><a class="facebook" href="{{$item->fb_url}}"><i
+                                            class="fab fa-facebook"></i></a>
                                 </li>
-                                @endif
-
-                                @if($item->tw_url != '')
-                                <li class="list-inline-item"><a class="twitter" target="_blank"
-                                        href="{{$item->tw_url}}"><i class="fab fa-twitter"></i></a>
+                                <li class="list-inline-item"><a class="twitter" href="{{$item->tw_url}}"><i
+                                            class="fab fa-twitter"></i></a>
                                 </li>
-                                @endif
-
-                                @if($item->in_url != '')
-                                <li class="list-inline-item"><a class="instagram" target="_blank"
-                                        href="{{$item->in_url}}"><i class="fab fa-instagram"></i></a>
+                                <li class="list-inline-item"><a class="instagram" href="{{$item->in_url}}"><i
+                                            class="fab fa-instagram"></i></a>
                                 </li>
-                                @endif
                             </ul>
                         </div>
                         <div class="card-body">
                             <h3>{{$item->name}}</h3>
-                            <h3>{{$item->designation}}</h3>
+                            <p>{{$item->designation}}</p>
                         </div>
-                        </divclass=>
+                    </div>
                 </div>
                 @endforeach
 

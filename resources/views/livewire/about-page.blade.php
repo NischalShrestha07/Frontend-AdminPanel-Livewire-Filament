@@ -5,9 +5,9 @@
                 <div class="col-8 mx-auto text-center">
                     <h2 class="mb-3 text-capitalize">About Us</h2>
                     <ul class="list-inline breadcrumbs text-capitalize" style="font-weight:500">
-                        <li class="list-inline-item"><a href="index.html">Home</a>
+                        <li class="list-inline-item"><a href="{{route('home')}}">Home</a>
                         </li>
-                        <li class="list-inline-item">/ &nbsp; <a href="about.html">About</a>
+                        <li class="list-inline-item">/ &nbsp; <a href="{{asset('about')}}">About</a>
                         </li>
                     </ul>
                 </div>
@@ -109,98 +109,35 @@
                 </div>
             </div>
             <div class="row position-relative">
+                @foreach ($members as $item)
                 <div class="col-xl-3 col-lg-4 col-md-6 mt-4">
+
                     <div class="card bg-transparent border-0 text-center">
                         <div class="card-img">
-                            <img loading="lazy" decoding="async" src="images/about/team-1.jpg" alt="Scarlet Pena"
-                                class="rounded w-100" width="300" height="332">
+                            @if ($item->image != '')
+                            <img loading="lazy" decoding="async" src="{{asset('storage/'.$item->image)}}"
+                                alt="{{$item->name}}" class="rounded w-100" width="300" height="332">
+                            @endif
                             <ul class="card-social list-inline">
-                                <li class="list-inline-item"><a class="facebook" href="#"><i
+                                <li class="list-inline-item"><a class="facebook" href="{{$item->fb_url}}"><i
                                             class="fab fa-facebook"></i></a>
                                 </li>
-                                <li class="list-inline-item"><a class="twitter" href="#"><i
+                                <li class="list-inline-item"><a class="twitter" href="{{$item->tw_url}}"><i
                                             class="fab fa-twitter"></i></a>
                                 </li>
-                                <li class="list-inline-item"><a class="instagram" href="#"><i
+                                <li class="list-inline-item"><a class="instagram" href="{{$item->in_url}}"><i
                                             class="fab fa-instagram"></i></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="card-body">
-                            <h3>Scarlet Pena</h3>
-                            <p>Instructor</p>
+                            <h3>{{$item->name}}</h3>
+                            <p>{{$item->designation}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 mt-4">
-                    <div class="card bg-transparent border-0 text-center">
-                        <div class="card-img">
-                            <img loading="lazy" decoding="async" src="images/about/team-2.jpg" alt="Claire Simmmons"
-                                class="rounded w-100" width="300" height="333">
-                            <ul class="card-social list-inline">
-                                <li class="list-inline-item"><a class="facebook" href="#"><i
-                                            class="fab fa-facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a class="twitter" href="#"><i
-                                            class="fab fa-twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a class="instagram" href="#"><i
-                                            class="fab fa-instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <h3>Claire Simmmons</h3>
-                            <p>Founder</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 mt-4">
-                    <div class="card bg-transparent border-0 text-center">
-                        <div class="card-img">
-                            <img loading="lazy" decoding="async" src="images/about/team-3.jpg" alt="Leslie Pena"
-                                class="rounded w-100" width="300" height="333">
-                            <ul class="card-social list-inline">
-                                <li class="list-inline-item"><a class="facebook" href="#"><i
-                                            class="fab fa-facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a class="twitter" href="#"><i
-                                            class="fab fa-twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a class="instagram" href="#"><i
-                                            class="fab fa-instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <h3>Leslie Pena</h3>
-                            <p>Director</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 mt-4">
-                    <div class="card bg-transparent border-0 text-center">
-                        <div class="card-img">
-                            <img loading="lazy" decoding="async" src="images/about/team-1.jpg" alt="Scarlet Pena"
-                                class="rounded w-100" width="300" height="332">
-                            <ul class="card-social list-inline">
-                                <li class="list-inline-item"><a class="facebook" href="#"><i
-                                            class="fab fa-facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a class="twitter" href="#"><i
-                                            class="fab fa-twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a class="instagram" href="#"><i
-                                            class="fab fa-instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <h3>Scarlet Pena</h3>
-                            <p>Instructor</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>

@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\AboutPageResource\Pages;
 use App\Filament\Resources\AboutPageResource\RelationManagers;
-use App\Models\AboutPage;
+use App\Models\About;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AboutPageResource extends Resource
 {
-    protected static ?string $model = AboutPage::class;
+    protected static ?string $model = About::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -23,7 +23,13 @@ class AboutPageResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')->placeholder('Title')->required(),
+                Forms\Components\FileUpload::make('image')->placeholder('Image'),
+                Forms\Components\TextInput::make('content')->placeholder('Content'),
+                Forms\Components\Select::make('status')->options([
+                    1 => 'Active',
+                    0 => 'Block',
+                ]),
             ]);
     }
 
@@ -31,7 +37,10 @@ class AboutPageResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('content'),
+                Tables\Columns\TextColumn::make('status'),
             ])
             ->filters([
                 //

@@ -9,7 +9,7 @@ class Faq extends Component
 {
     public function render()
     {
-        $faqs = ModelsFaq::orderBy('created_at', 'asc')->get();
+        $faqs = ModelsFaq::where('status', 1)->orderBy('created_at', 'asc')->get();
         return view('livewire.faq', compact('faqs'));
     }
 }
