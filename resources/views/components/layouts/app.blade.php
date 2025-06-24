@@ -72,16 +72,11 @@
                     <div class="footer-widget">
                         <h5 class="mb-4 text-primary font-secondary">Service</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><a href="service-details.html">Digital Marketing</a>
+                            @foreach (getServices() as $service)
+                            <li class="mb-2"><a wire:navigate
+                                    href="{{route('servicePage.index',$service->id)}}">{{$service->title}}</a>
                             </li>
-                            <li class="mb-2"><a href="service-details.html">Web Design</a>
-                            </li>
-                            <li class="mb-2"><a href="service-details.html">Logo Design</a>
-                            </li>
-                            <li class="mb-2"><a href="service-details.html">Graphic Design</a>
-                            </li>
-                            <li class="mb-2"><a href="service-details.html">SEO</a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -89,13 +84,13 @@
                     <div class="footer-widget">
                         <h5 class="mb-4 text-primary font-secondary">Quick Links</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><a href="{{route('about')}}">About Us</a>
+                            <li class="mb-2"><a wire:navigate href="{{route('about')}}">About Us</a>
                             </li>
-                            <li class="mb-2"><a href="{{route('contactus')}}">Contact Us</a>
+                            <li class="mb-2"><a wire:navigate href="{{route('contactus')}}">Contact Us</a>
                             </li>
-                            <li class="mb-2"><a href="{{route('blog')}}">Blog</a>
+                            <li class="mb-2"><a wire:navigate href="{{route('blog')}}">Blog</a>
                             </li>
-                            <li class="mb-2"><a href="{{route('teamPage')}}">Team</a>
+                            <li class="mb-2"><a wire:navigate href="{{route('teamPage')}}">Team</a>
                             </li>
                         </ul>
                     </div>

@@ -156,7 +156,8 @@
                                 </a>
                                 <div class="flex-grow-1">
                                     <h5 class="h6 mb-0"><a class="text-black"
-                                            href="blog-details.html">{!!substr($item->content,0,200)!!}</a></h5>
+                                            href="{{route('blog.index',$item->id)}}">{!!substr($item->content,0,200)!!}</a>
+                                    </h5>
                                     <small>{{$latestArticle->created_at->format('Y-m-d')}}</small>
                                 </div>
                             </li>
