@@ -5,6 +5,7 @@ use App\Livewire\BlogDetail;
 use App\Livewire\ContactUs;
 use App\Livewire\Faq;
 use App\Livewire\ShowBlog;
+use App\Livewire\ShowContactPage;
 use App\Livewire\ShowHome;
 use App\Livewire\ShowService;
 use App\Livewire\ShowServicePage;
@@ -29,4 +30,4 @@ Route::get('/blogs', ShowBlog::class)->name('blog');
 Route::get('/blogs/{id}', BlogDetail::class)->name('blog.index');
 
 Route::get('/about', AboutPage::class)->name('about');
-Route::get('/contactus', ContactUs::class)->name('contactus');
+Route::get('/contactus', ShowContactPage::class)->name('contactus');

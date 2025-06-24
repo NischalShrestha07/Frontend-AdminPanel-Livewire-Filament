@@ -119,14 +119,14 @@
                                 alt="{{$item->name}}" class="rounded w-100" width="300" height="332">
                             @endif
                             <ul class="card-social list-inline">
-                                <li class="list-inline-item"><a class="facebook" href="{{$item->fb_url}}"><i
-                                            class="fab fa-facebook"></i></a>
+                                <li class="list-inline-item"><a class="facebook" target="_blank"
+                                        href="{{$item->fb_url}}"><i class="fab fa-facebook"></i></a>
                                 </li>
-                                <li class="list-inline-item"><a class="twitter" href="{{$item->tw_url}}"><i
-                                            class="fab fa-twitter"></i></a>
+                                <li class="list-inline-item"><a class="twitter" target="_blank"
+                                        href="{{$item->tw_url}}"><i class="fab fa-twitter"></i></a>
                                 </li>
-                                <li class="list-inline-item"><a class="instagram" href="{{$item->in_url}}"><i
-                                            class="fab fa-instagram"></i></a>
+                                <li class="list-inline-item"><a class="instagram" target="_blank"
+                                        href="{{$item->in_url}}"><i class="fab fa-instagram"></i></a>
                                 </li>
                             </ul>
                         </div>

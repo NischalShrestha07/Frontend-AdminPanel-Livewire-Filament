@@ -135,22 +135,36 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="contact-form">
-                                    <form action="#!">
+                                    <form wire:submit="submit">
                                         <div class="form-group mb-4 pb-2">
-                                            <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-                                            <input type="text" class="form-control shadow-none" id="contact_name">
+                                            <label for="name" class="form-label">Full Name</label>
+                                            <input type="text" wire:model="name" name="name"
+                                                class="form-control shadow-none @error('name') is-invalid @enderror"
+                                                id="name">
+                                            @error('name')
+                                            <p class="invalid-feedback">{{$message}}</p>
+                                            @enderror
                                         </div>
+
                                         <div class="form-group mb-4 pb-2">
-                                            <label for="exampleFormControlInput1" class="form-label">Email
+                                            <label for="email" class="form-label">Email
                                                 address</label>
-                                            <input type="email" class="form-control shadow-none" id="contact_email">
+                                            <input type="email" wire:model="email" name="email"
+                                                class="form-control shadow-none @error('email') is-invalid @enderror"
+                                                id="email">
+                                            @error('email')
+                                            <p class="invalid-feedback">{{$message}}</p>
+                                            @enderror
                                         </div>
+
+
                                         <div class="form-group mb-4 pb-2">
-                                            <label for="exampleFormControlTextarea1" class="form-label">Write
+                                            <label for="message" class="form-label">Write
                                                 Message</label>
-                                            <textarea class="form-control shadow-none" id="exampleFormControlTextarea1"
-                                                rows="3"></textarea>
+                                            <textarea class="form-control shadow-none" wire-model="message"
+                                                name="message" id="message" rows="3"></textarea>
                                         </div>
+
                                         <button class="btn btn-primary w-100" type="submit">Send Message</button>
                                     </form>
                                 </div>
