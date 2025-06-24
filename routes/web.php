@@ -1,10 +1,13 @@
 <?php
 
+use App\Livewire\BlogDetail;
 use App\Livewire\Faq;
+use App\Livewire\ShowBlog;
 use App\Livewire\ShowHome;
 use App\Livewire\ShowService;
 use App\Livewire\ShowServicePage;
 use App\Livewire\ShowTeamPage;
+use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -20,3 +23,5 @@ Route::get('/services', ShowServicePage::class)->name('servicePage');
 
 Route::get('/team', ShowTeamPage::class)->name('teamPage');
 Route::get('/faq', Faq::class)->name('faq');
+Route::get('/blogs', ShowBlog::class)->name('blog');
+Route::get('/blogs/{id}', BlogDetail::class)->name('blog.index');

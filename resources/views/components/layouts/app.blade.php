@@ -49,7 +49,7 @@
                                 href="{{route('servicePage')}}">Services</a></li>
                         <li class="nav-item "> <a class="nav-link" wire:navigate href="{{route('teamPage')}}">Our
                                 Team</a></li>
-                        <li class="nav-item "><a class="nav-link " wire:navigate href="blog.html">Blog</a></li>
+                        <li class="nav-item "><a class="nav-link " wire:navigate href="{{route('blog')}}">Blog</a></li>
                         <li class="nav-item "><a class="nav-link " wire:navigate href="{{route('faq')}}">FAQ</a></li>
                     </ul>
                     <a href="#!" class="btn btn-outline-primary">Contact Us</a>
@@ -92,7 +92,7 @@
                             </li>
                             <li class="mb-2"><a href="#!">Contact Us</a>
                             </li>
-                            <li class="mb-2"><a href="#!">Blog</a>
+                            <li class="mb-2"><a href="{{route('blog')}}">Blog</a>
                             </li>
                             <li class="mb-2"><a href="{{route('teamPage')}}">Team</a>
                             </li>

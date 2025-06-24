@@ -62,8 +62,8 @@
                     </div>
                 </div>
             </div>
+            @foreach ($faqs as $item)
             <div class="row justify-content-center">
-                @foreach ($faqs as $item)
                 <div class="col-lg-9">
                     <div class="accordion accordion-border-bottom" id="accordionFAQ">
                         <div class="accordion-item">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                @endforeach
             </div>
+            @endforeach
     </section>
 </main>
