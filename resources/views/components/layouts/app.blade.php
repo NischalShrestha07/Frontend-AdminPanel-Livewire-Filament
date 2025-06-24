@@ -44,13 +44,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto mb-2 mb-lg-0">
                         <li class="nav-item"> <a wire:navigate class="nav-link" href="{{route('home')}}">Home</a></li>
-                        <li class="nav-item "> <a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item "> <a wire:navigate class="nav-link" href="about.html">About Us</a></li>
                         <li class="nav-item "> <a wire:navigate class="nav-link"
                                 href="{{route('servicePage')}}">Services</a></li>
                         <li class="nav-item "> <a class="nav-link" wire:navigate href="{{route('teamPage')}}">Our
                                 Team</a></li>
-                        <li class="nav-item "><a class="nav-link " href="blog.html">Blog</a></li>
-                        <li class="nav-item "><a class="nav-link " href="faq.html">FAQ</a></li>
+                        <li class="nav-item "><a class="nav-link " wire:navigate href="blog.html">Blog</a></li>
+                        <li class="nav-item "><a class="nav-link " wire:navigate href="{{route('faq')}}">FAQ</a></li>
                     </ul>
                     <a href="#!" class="btn btn-outline-primary">Contact Us</a>
                 </div>

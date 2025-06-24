@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Faq;
 use App\Livewire\ShowHome;
 use App\Livewire\ShowService;
 use App\Livewire\ShowServicePage;
@@ -18,3 +19,4 @@ Route::get('/services', ShowServicePage::class)->name('servicePage');
 
 
 Route::get('/team', ShowTeamPage::class)->name('teamPage');
+Route::get('/faq', Faq::class)->name('faq');

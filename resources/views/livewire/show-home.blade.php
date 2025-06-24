@@ -77,11 +77,14 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipreiscing elit. Lacus penatibus tincidunt</p>
                     </div>
                 </div>
+
                 @php
                 $i=1;
                 @endphp
                 @foreach ($services as $item)
-                <x-service-card :item="$item" :i="$i" />
+
+                <x-service-card :item="$item" :i="$i++" />
+
                 @endforeach
 
             </div>
