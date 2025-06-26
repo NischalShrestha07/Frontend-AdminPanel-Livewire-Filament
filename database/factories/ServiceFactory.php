@@ -16,8 +16,13 @@ class ServiceFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
-            //
+            'title' => $this->faker->name(),
+            'icon_class' => $this->faker->word(),
+            'short_desc' => $this->faker->paragraph(),
+            'description' => $this->faker->paragraph(),
+            'status' => $this->faker->boolean()
         ];
     }
 }

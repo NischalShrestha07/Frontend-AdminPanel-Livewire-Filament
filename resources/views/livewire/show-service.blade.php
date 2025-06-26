@@ -15,6 +15,7 @@
                 </div>
             </div>
         </div>
+
         <div class="has-shapes">
             <svg class="shape shape-left text-light" viewBox="0 0 192 752" fill="none"
                 xmlns="http://www.w3.org/2000/svg">

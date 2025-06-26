@@ -83,10 +83,12 @@
                 @endphp
                 @foreach ($services as $item)
 
-                <x-service-card :item="$item" :i="$i++" />
-
+                <x-service-card :item="$item" :i="$i" />
+                @php
+                $i++
+                @endphp
                 @endforeach
-
+                {{$services->links()}}
             </div>
         </div>
     </section>

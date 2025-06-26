@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Livewire\AboutPage;
 use App\Livewire\BlogDetail;
 use App\Livewire\ContactUs;
@@ -31,3 +32,8 @@ Route::get('/blogs/{id}', BlogDetail::class)->name('blog.index');
 
 Route::get('/about', AboutPage::class)->name('about');
 Route::get('/contactus', ShowContactPage::class)->name('contactus');
+
+
+
+///testing routes
+Route::post('register', [AuthController::class, 'register']);

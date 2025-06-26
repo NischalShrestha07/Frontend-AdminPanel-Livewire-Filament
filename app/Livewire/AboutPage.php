@@ -12,4 +12,6 @@ class AboutPage extends Component
         $members = Member::orderBy('name', 'asc')->get();
         return view('livewire.about-page', compact('members'));
     }
+
+    
 }
